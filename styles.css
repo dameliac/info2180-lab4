@@ -1,0 +1,47 @@
+.container{
+    margin: 0, auto;
+    display: flexbox;
+}
+
+body{
+    background-color: white;
+}
+
+header{
+    background: rgb(169, 193, 213);
+    text-align: center;
+    padding: 10px;
+    
+}
+
+.search .container{
+    margin-left: 120px;
+}
+
+input{
+    width: 80%;
+    padding: 17px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 25px;
+}
+
+.btn{
+    border: 1px solid cornflowerblue;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    font-weight: 500;
+
+}
+
+#result{
+    margin-left: 100px;
+
+}
+
+
+

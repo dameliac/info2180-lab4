@@ -1,24 +1,31 @@
 window.onload = function Search(){
     let searchbtn = document.querySelector(".search").querySelector(".btn");
     let httpRequest;
+    let form = document.forms[0];
+    //const santizer = new Sanitizer();
+    
 
 
     searchbtn.addEventListener('click', function(){
+        console.log('form submitted');
+        let input = form.elements['name'];
+        let data = input.value;
+        //const cleanval = santizer.sanitize(input);
         httpRequest = new XMLHttpRequest(); //creating an XMLHttpRequest object.
         //GET Request
-        let supes = "superheroes.php";
-        httpRequest.onreadystatechange = loadQuote;
-        httpRequest.open('GET', supes);
+        httpRequest.onreadystatechange = loadData;
+        httpRequest.open('GET', 'superheroes.php?query='+data,true);
         httpRequest.send();
+
+      
     });
 
-    function loadQuote() {
+    function loadData() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
             let response = httpRequest.responseText;
-            //var quote = document.querySelector(".search").querySelector(".avengers");
-            //quote.innerHTML = response;
-            alert(response);
+            let result = document.getElementById("result");
+            result.innerHTML = response;
           } else {
             alert('There was a problem with the request.');
           }
