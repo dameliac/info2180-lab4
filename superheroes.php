@@ -70,7 +70,6 @@ $superheroes = [
 <ul>
 <?php
 $q = $_REQUEST['query'];
-//$q = htmlspecialchars($q);
 $ishero = false;
 if ($q == ""){
     foreach ($superheroes as $superhero): 
